@@ -73,7 +73,7 @@ export class ApiService {
   } 
 
   unblock(id: number): Observable<number> {
-    return this.hc.delete<number>(`http://localhost:44315/api/favourite/remove?favUserId=${id}`, this.httpOptions());
+    return this.hc.delete<number>(`http://localhost:44315/api/blocked/unblock?userIdToUnblock=${id}`, this.httpOptions());
   }
 
   getAllBlocked(): Observable<Profile[]> {
