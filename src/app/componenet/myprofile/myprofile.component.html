@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-4">
+            <mat-form-field class="example-full-width">
+                <mat-label>First name <span class="abc">*</span></mat-label>
+                <input matInput [(ngModel)]='profile.firstName'>
+            </mat-form-field>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="form-group">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Last name <span class="abc">*</span></mat-label>
+                    <input matInput [(ngModel)]='profile.lastName'>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-4 mt-4">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Mobile number: <span class="abc">*</span></mat-label>
+                    <input matInput [(ngModel)]='profile.mobileNumber'>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Gender <span class="abc">*</span></mat-label>
+                    <mat-select [(ngModel)]='profile.genderId'>
+                        <mat-option [value]='g.id' *ngFor='let g of genders'> {{g.name}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">Date Of Birth: <span class="abc">*</span></label>
+                <select class="form-control" [(ngModel)]='selectedDay'>
+                    <option value="undefined">Day</option>
+                    <option  [value]="day" *ngFor='let day of days'> {{day}} </option>
+                </select>
+                <select class="form-control" [(ngModel)]='selectedMonth'>
+                    <option value="undefined">Month</option>
+                    <option [value]="m" *ngFor='let m of months'> {{m}} </option>
+                </select>
+                <select class="form-control" [(ngModel)]='selectedYear'>
+                    <option value="undefined">Year</option>
+                    <option [value]="y" *ngFor='let y of years'> {{y}} </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Education: <span class="abc">*</span></mat-label>
+                    <mat-select [(ngModel)]='profile.educationId'>
+                        <mat-option [value]='edu.id' *ngFor='let edu of educations'> {{edu.name}} </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Marital Status: <span class="abc">*</span> </mat-label>
+                <mat-select [(ngModel)]='profile.maritalStatusId'>
+                    <mat-option [value]='mat.id' *ngFor='let mat of maritals'> {{mat.name}} </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Employment Type: <span class="abc">*</span></mat-label>
+                   <mat-select [(ngModel)]='profile.employmentTypeId'>
+                       <mat-option [value]='emp.id' *ngFor='let emp of employments'> {{emp.name}} </mat-option>
+                   </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <mat-form-field>
+                    <mat-label>Job Title: <span class="abc">*</span></mat-label>
+                    <input matInput [(ngModel)]='profile.jobTitle'>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Country: <span class="abc">*</span></mat-label>
+                <mat-select [(ngModel)]='profile.countryId'>
+                    <mat-option [value]="c.id" *ngFor='let c of countryes'> {{c.name}} </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field>
+                <mat-label>Keep my mobile visibility others: <span class="abc">*</span></mat-label>
+                <!-- <input matInput [(ngModel)]='profile.mobileNumVisibility'> -->
+                <mat-select [(ngModel)]='profile.mobileNumVisibility'> 
+                    <mat-option value="y">Yes</mat-option>
+                    <mat-option value="n">No</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button mat-raised-button color = "accent" (click)='submit()'>submit</button>   
+        </div>
+    </div>
+</div>

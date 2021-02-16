@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="form-group">
+                <label for="">Login <span class="abc">*</span></label>
+                <input type="text" class="form-control" placeholder="email" [(ngModel)]='userName'>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4 mt-4">
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" [(ngModel)]='password'>
+            </div>
+        </div>
+    </div>
+    <button mat-raised-button color='primary' (click)='login()'>Submit</button>
+</div>

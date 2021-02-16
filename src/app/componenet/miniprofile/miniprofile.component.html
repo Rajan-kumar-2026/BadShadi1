@@ -1,0 +1,7 @@
+<!-- <div [routerLink] = "['/profile/' + profile.email]" style="cursor: pointer;"></div>
+ -->
+ <div [routerLink] = "['/profile/' + profile.email]" style="cursor: pointer;">
+Name: {{profile.firstName}} {{profile.lastName}} <br>
+Education: {{ util.getEducationText(profile.educationId)}} <br>
+MaritalStatus: {{util.getMaritalStatusText(profile.maritalStatusId)}}
+</div>

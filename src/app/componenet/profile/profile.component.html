@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <div *ngIf='!!profile'>
+        Name: {{profile.firstName}} {{profile.lastName}} <br>
+        Email: {{profile.email}} <br>
+        Gender: {{us.getGenderText(profile.genderId)}} <br>
+        Education: {{us.getEducationText(profile.educationId)}} <br>
+        Country: {{us.getCountryText(profile.countryId)}} <br>
+        Employment: {{us.getEmploymentText(profile.employmentTypeId)}} <br>
+        Marital Status: {{us.getMaritalStatusText(profile.maritalStatusId)}} <br>
+        Job Title: {{profile.jobTitle}} <br>
+        Date Of Birth: {{profile.dateOfBirth}} <br>
+
+        <button (click)='makeFavourite()' *ngIf='!isFavourite' mat-raised-button color= "primary">Make Favourite</button>
+        <button (click)='removeFavourite()' *ngIf='isFavourite' mat-raised-button color="accent">Remove Favourite</button>
+
+        <button (click)='block()' *ngIf='!isBlocked' mat-raised-button color="warn">Block</button>
+        <button (click)='unblock()' *ngIf='isBlocked' mat-raised-button color="accent">Unblock</button>
+    </div>
+</div>
